@@ -1,6 +1,6 @@
 import {createStackNavigator} from "@react-navigation/stack";
 import * as React from "react";
-import HomeScreenController from "screens/home/HomeController";
+import LoginController from "screens/home/LoginController";
 import DetailScreenController from "screens/detail/DetailController";
 
 export const navigationRef: any = React.createRef();
@@ -17,7 +17,7 @@ export const AppStackScreen: any = () => {
         },
         headerTintColor: "rgba(0, 0, 0, 0.88)"
     }}>
-        <AppStack.Screen name="Home" component={HomeScreenController} options={{}}/>
+        <AppStack.Screen name="Home" component={LoginController} options={{}}/>
         <AppStack.Screen name="Detail" component={DetailScreenController} options={{}}/>
     </AppStack.Navigator>)
 };

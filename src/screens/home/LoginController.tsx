@@ -4,17 +4,10 @@ import { appStyles } from "commons/styles";
 import PasswordTextBox from "components/PasswordTextBox";
 import AnimatedView from "components/AnimatedView";
 
-const HomeScreenController = ({ navigation }: any) => {
-
-    // navigation.setOptions({
-    //     headerTitle: (<View style={{ width: "100%" }}><Text style={{ color: "rgba(0, 0, 0, 1)", backgroundColor: "rgba(127, 0, 255, 1)" }}>Hello</Text></View>)
-    // })
+const LoginController = ({ navigation }: any) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-
-    // const scaleUsername = usePulse(1000);
-    // const scalePassword = usePulse(1800);
 
     return (
         <ImageBackground source={require('../../../res/background.jpg')}
@@ -58,4 +51,4 @@ const HomeScreenController = ({ navigation }: any) => {
     )
 };
 
-export default HomeScreenController
+export default LoginController
