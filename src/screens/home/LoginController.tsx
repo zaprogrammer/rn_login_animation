@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
-import { SafeAreaView, Animated, ImageBackground, Text, View } from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView, ImageBackground } from "react-native";
 import { appStyles } from "commons/styles";
-import PasswordTextBox from "components/PasswordTextBox";
+import CustomTextBox from "components/CustomTextBox";
 import AnimatedView from "components/AnimatedView";
+import LinearGradient from 'react-native-linear-gradient';
 
 const LoginController = ({ navigation }: any) => {
 
@@ -10,30 +11,33 @@ const LoginController = ({ navigation }: any) => {
     const [password, setPassword] = useState('')
 
     return (
-        <ImageBackground source={require('../../../res/background.jpg')}
-            resizeMode='cover'
-            style={{ width: '100%', height: '100%' }}>
-            <SafeAreaView style={[appStyles.safeArea]}>
 
+        <LinearGradient
+            style={{ flex: 1 }}
+            colors={['#FF00FF', '#7F00F0']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            locations={[0.1, 0.7]}>
+            <SafeAreaView style={[appStyles.safeArea]}>
                 <AnimatedView delay={1000}>
-                    {<PasswordTextBox
+                    {<CustomTextBox
                         placeholder={'Username'}
                         returnKeyType={'next'}
                         value={username}
                         onChangeText={(value) => setUsername(value)}
                         onSubmitEditing={() => console.log(username)}>
-                    </PasswordTextBox>}
+                    </CustomTextBox>}
                 </AnimatedView>
 
-                <AnimatedView delay={1800}>
-                    {<PasswordTextBox
+                <AnimatedView delay={1800} style={{ marginTop: 30 }}>
+                    {<CustomTextBox
                         placeholder={'Password'}
                         returnKeyType={'done'}
                         isPassword={true}
                         value={password}
                         onChangeText={(value) => setPassword(value)}
                         onSubmitEditing={() => console.log(password)}>
-                    </PasswordTextBox>}
+                    </CustomTextBox>}
                 </AnimatedView>
 
                 {/* <Animated.View style={{ opacity: scalePassword, transform: [{ translateY: transformField(scalePassword, 40) }, { perspective: 1000 }] }}>
@@ -47,7 +51,7 @@ const LoginController = ({ navigation }: any) => {
                     </PasswordTextBox>
                 </Animated.View> */}
             </SafeAreaView>
-        </ImageBackground>
+        </LinearGradient>
     )
 };
 

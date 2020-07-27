@@ -3,7 +3,6 @@ import { Animated } from "react-native";
 
 const AnimatedView = (props: any) => {
 
-    console.log(props)
     const usePulse = (startDelay = 500) => {
         const scale = useRef(new Animated.Value(0)).current;
 
@@ -44,7 +43,7 @@ const AnimatedView = (props: any) => {
     const scaleField = usePulse(props.delay);
 
     return (
-        <Animated.View style={{ opacity: scaleField, transform: [{ translateY: transformField(scaleField) }, { perspective: 1000 }] }}>
+        <Animated.View style={{ ...props.style, opacity: scaleField, transform: [{ translateY: transformField(scaleField) }, { perspective: 1000 }] }}>
             {props.children}
         </Animated.View>
     )

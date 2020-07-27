@@ -17,7 +17,9 @@ interface State {
     hidePassword: boolean
 }
 
-class PasswordTextBox extends Component<Props, State> {
+class CustomTextBox extends Component<Props, State> {
+
+    static textColor = (opacity: number) => `rgba(255, 255, 255, ${opacity} )`
 
     static propTypes = {
         placeholder: PropTypes.string,
@@ -39,7 +41,7 @@ class PasswordTextBox extends Component<Props, State> {
             <View style={styles.container}>
                 <View style={styles.textBoxContainer}>
                     <TextInput
-                        placeholderTextColor={"rgba(127, 0, 255, 0.64 )"}
+                        placeholderTextColor={CustomTextBox.textColor(0.75)}
                         style={styles.textBox}
                         value={value}
                         underlineColorAndroid="transparent"
@@ -53,7 +55,7 @@ class PasswordTextBox extends Component<Props, State> {
                     />
                     {isPassword && <TouchableOpacity activeOpacity={0.8} style={styles.touchableButton}
                         onPress={this.changePasswordVisibility}>
-                        <Icon color={"rgba(127, 0, 255, 0.64)"}
+                        <Icon color={CustomTextBox.textColor(0.75)}
                             name={(this.state.hidePassword) ? "visibility" : "visibility-off"} size={25} />
                     </TouchableOpacity>}
                 </View>
@@ -69,9 +71,6 @@ class PasswordTextBox extends Component<Props, State> {
 const styles = StyleSheet.create(
     {
         container: {
-            // flex: 1,
-            // justifyContent: "center",
-            // alignItems: "center",
             width: windowWidth - 40,
             marginLeft: "0%",
         },
@@ -88,9 +87,9 @@ const styles = StyleSheet.create(
             paddingRight: 45,
             fontWeight: 'bold',
             paddingVertical: 0,
-            color: "rgba(127, 0, 255, 0.5)",
+            color: CustomTextBox.textColor(1),
             borderWidth: 1,
-            borderBottomColor: "rgba(127, 0, 255, 0.64)",
+            borderBottomColor: CustomTextBox.textColor(1),
             borderLeftColor: "transparent",
             borderTopColor: "transparent",
             borderRightColor: "transparent",
@@ -103,4 +102,4 @@ const styles = StyleSheet.create(
         },
     });
 
-export default PasswordTextBox;
+export default CustomTextBox;
