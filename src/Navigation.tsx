@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
-import LoginController from "screens/home/LoginController";
+import LoginController from "screens/login/LoginController";
 import DetailScreenController from "screens/detail/DetailController";
 
 export const navigationRef: any = React.createRef();

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TextInput, View, TouchableOpacity, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { windowWidth } from "screens/home/styles";
+import { windowWidth } from "screens/login/styles";
 import PropTypes from 'prop-types';
 
 interface Props {
