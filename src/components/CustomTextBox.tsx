@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { TextInput, View, TouchableOpacity, StyleSheet } from "react-native";
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { windowWidth } from "screens/login/styles";
 import PropTypes from 'prop-types';
 
@@ -56,7 +56,7 @@ class CustomTextBox extends Component<Props, State> {
                     {isPassword && <TouchableOpacity activeOpacity={0.8} style={styles.touchableButton}
                         onPress={this.changePasswordVisibility}>
                         <Icon color={CustomTextBox.textColor(0.75)}
-                            name={(this.state.hidePassword) ? "visibility" : "visibility-off"} size={25} />
+                            name={(this.state.hidePassword) ? "eye" : "eye-off"} size={25} />
                     </TouchableOpacity>}
                 </View>
             </View>
