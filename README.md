@@ -1,4 +1,5 @@
 This app demonstrates basically the usage of React-native **Animated** module, along with other concepts such as:
+* Building custom **hooks**, custom animation hooks and make them reusable.
 * Custom functional / Class components.
 * **LinearGradient** component.
 * Password show/hide.
